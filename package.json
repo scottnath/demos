@@ -1,0 +1,24 @@
+{
+  "name": "demos",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "astro"
+  ],
+  "scripts": {
+    "start": "npm run dev -w demos-site",
+    "dev": "npm run dev -w demos-site",
+    "build": "npm run build -w demos-site",
+    "preview": "npm run preview -w demos-site",
+    "storybook": "npm run storybook -w demos-site",
+    "build-storybook": "npm run build-storybook -w demos-site",
+    "typecheck": "npm run typecheck -w demos-site"
+  },
+  "devDependencies": {
+    "@scottnath/devx": "github:scottnath/devx",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}

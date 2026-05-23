@@ -1,0 +1,39 @@
+---
+description: Gitmoji commit message format requirements
+alwaysApply: true
+---
+
+# Gitmoji Commits
+
+All commit messages in this project must use the [Gitmoji](https://gitmoji.dev) format.
+
+See `@scottnath/devx` docs for the source of truth:
+
+- `node_modules/@scottnath/devx/docs/gitmoji-rules.md`
+- `node_modules/@scottnath/devx/docs/how-to-write-a-commit.md`
+
+## Format
+
+```
+<emoji> Short description
+
+Optional body
+
+Optional footer (e.g. issue refs: #123)
+```
+
+Use either the raw emoji character or the `:code:` shorthand — both are valid.
+
+## Examples
+
+```
+✨ Add demo Astro site with Storybook
+
+🐛 Fix Welcome story args
+
+📝 Update README
+```
+
+## Reserved
+
+Do not use `:bookmark:` manually — it is created by semantic-release for version tags.
