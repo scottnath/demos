@@ -15,7 +15,7 @@
     "typecheck": "npm run typecheck -w demos-site"
   },
   "devDependencies": {
-    "@scottnath/devx": "^1.0.0",
+    "@scottnath/devx": "^1.0.1",
     "typescript": "^6.0.3"
   },
   "engines": {
