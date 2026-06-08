@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "workspaces": [
-    "astro"
+    "astro",
+    "native-testing"
   ],
   "scripts": {
     "start": "npm run dev -w demos-site",
@@ -12,7 +13,8 @@
     "preview": "npm run preview -w demos-site",
     "storybook": "npm run storybook -w demos-site",
     "build-storybook": "npm run build-storybook -w demos-site",
-    "typecheck": "npm run typecheck -w demos-site"
+    "typecheck": "npm run typecheck -w demos-site",
+    "test": "npm run test -w native-node-testing"
   },
   "devDependencies": {
     "@scottnath/devx": "^1.0.8",

@@ -1,0 +1,22 @@
+{
+  "name": "native-node-testing",
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "test": "node --test --import tsx src/class-example.test.ts src/class-extends-example.test.ts src/fs-example.test.ts src/bsky-profile.test.ts",
+    "test:config": "node --import tsx test.config.js",
+    "test:coverage": "node --import tsx test.config.js --coverage",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "fetch-mock-cache": "^2.3.1",
+    "mock-fs": "^5.5.0",
+    "tsx": "^4.22.3",
+    "typescript": "^6.0.3"
+  }
+}
