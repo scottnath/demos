@@ -17,7 +17,7 @@
     "test": "npm run test -w native-node-testing"
   },
   "devDependencies": {
-    "@scottnath/devx": "^1.0.8",
+    "@scottnath/devx": "^1.2.1",
     "typescript": "^6.0.3"
   },
   "engines": {

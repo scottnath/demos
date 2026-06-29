@@ -1,9 +1,22 @@
 ---
-interface Props {
+import { SEO } from 'astro-seo';
+import { resolveOgImage, seoConfig } from '../../utils/seoConfig';
+
+export interface Props {
   title: string;
+  description?: string;
+  ogTitle?: string;
+  image?: { url: string; alt: string };
 }
 
-const { title } = Astro.props;
+const { title, description, ogTitle, image } = Astro.props;
+
+const descriptionResolved = description ?? seoConfig.description;
+
+const ogImageUrl = image?.url
+  ? resolveOgImage(image.url)
+  : resolveOgImage(seoConfig.image.url);
+const ogImageAlt = image?.alt ?? seoConfig.image.alt;
 ---
 
 <!doctype html>
@@ -13,7 +26,30 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <SEO
+      title={title.replaceAll('"', '')}
+      description={descriptionResolved}
+      openGraph={{
+        basic: {
+          title: ogTitle ?? title,
+          type: seoConfig.type,
+          image: ogImageUrl,
+        },
+        image: {
+          width: seoConfig.image.width,
+          height: seoConfig.image.height,
+          alt: ogImageAlt,
+        },
+        optional: {
+          siteName: seoConfig.siteName,
+          description: descriptionResolved,
+        },
+      }}
+      twitter={{
+        card: seoConfig.twitter.card,
+      }}
+    />
+    <slot name="head" />
     <style is:global>
       :root {
         color-scheme: light dark;

@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Welcome from '../components/Welcome.astro';
+import { seoConfig } from '../../utils/seoConfig';
 ---
 
-<Layout title="scottnath/demos">
+<Layout title="scottnath/demos" description={seoConfig.description}>
   <main>
     <h1>scottnath/demos</h1>
     <p>Things I need to show for stuff.</p>
